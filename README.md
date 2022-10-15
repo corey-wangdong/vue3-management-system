@@ -89,3 +89,25 @@ yarn add pinia
 ```
 
 ## 封装 axios
+
+## 区分 development 和 production 环境
+
+1. Vite 的环境变量：
+2. Vite 在一个特殊的 import.meta.env 对象上暴露环境变量。这里有一些在所有情况下都可以使用的内建变量：
+
+- import.meta.env.MODE: {string} 应用运行的模式。
+- import.meta.env.PROD: {boolean} 应用是否运行在生产环境。
+- import.meta.env.DEV: {boolean} 应用是否运行在开发环境 (永远与 import.meta.env.PROD 相反)。
+- import.meta.env.SSR: {boolean} 应用是否运行在 server 上
+
+3. Vite 使用 dotenv 从你的 环境目录 中的下列文件加载额外的环境变量：
+
+```js
+.env                   // 所有情况下都会加载
+.env.local            // 所有情况下都会加载, 但会被 git 忽略
+.env.[mode]          // 只在指定模式下加载
+.env.[mode].local   // 只在指定模式下加载,但会被 git 忽略
+```
+
+- 只有以 VITE\_ 为前缀的变量才会暴露给经过 vite 处理的代码。
+- VITE_URL=prod
