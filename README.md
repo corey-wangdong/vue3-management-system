@@ -87,3 +87,5 @@ yarn add vue-router
 ```js
 yarn add pinia
 ```
+
+## 封装 axios
