@@ -9,6 +9,11 @@
       <el-button type="warning">Warning</el-button>
       <el-button type="danger">Danger</el-button>
     </el-row>
+
+    <div>
+      <el-checkbox v-model="checked1" label="Option 1" size="large" />
+      <el-checkbox v-model="checked2" label="Option 2" size="large" />
+    </div>
   </div>
 </template>
 
