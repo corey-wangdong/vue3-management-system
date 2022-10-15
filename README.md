@@ -72,3 +72,9 @@ declare module '*.vue' {
 ```js
 yarn add normalize.css
 ```
+
+## 路由配置
+
+```js
+yarn add vue-router
+```
