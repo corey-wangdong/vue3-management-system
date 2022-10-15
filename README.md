@@ -78,3 +78,12 @@ yarn add normalize.css
 ```js
 yarn add vue-router
 ```
+
+## 状态管理
+
+- vuex: 目前依然使用较多的状态管理库;
+- pinia: 强烈推荐, 未来趋势的状态管理库
+
+```js
+yarn add pinia
+```
