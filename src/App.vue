@@ -1,13 +1,15 @@
 <template>
-  <h2>hello vue3</h2>
-  <router-link to="/login"><button>login</button></router-link>
-  <router-link to="/main"><button>main</button></router-link>
-  <router-view></router-view>
+  <div class="app">
+    <router-view></router-view>
+  </div>
 </template>
 
 <script setup lang="ts">
 </script>
 
 <style scoped>
-
+.app {
+  width: 100vw;
+  height: 100vh;
+}
 </style>
