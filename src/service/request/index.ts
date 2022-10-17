@@ -1,4 +1,4 @@
-import axios, { AxiosError, type AxiosRequestConfig, type AxiosResponse } from "axios";
+import axios, { type AxiosRequestConfig, type AxiosResponse } from "axios";
 import type { AxiosInstance } from "axios";
 import type { requestConfig } from "./type";
 
@@ -15,7 +15,7 @@ class Request {
         // loading/token
         return config;
       },
-      (err: AxiosError) => {
+      (err: any) => {
         return err;
       }
     );
@@ -23,7 +23,7 @@ class Request {
       (res: AxiosResponse) => {
         return res.data;
       },
-      (err: AxiosError) => {
+      (err: any) => {
         return err;
       }
     );
@@ -52,6 +52,8 @@ class Request {
       this.instance
         .request<any, T>(config)
         .then((res: any) => {
+          console.log("res----", res);
+
           // 单词响应的成功拦截处理
           if (config.interceptors?.responseSuccessFn) {
             res = config.interceptors.responseSuccessFn(res);
