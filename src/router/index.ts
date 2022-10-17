@@ -30,6 +30,14 @@ const routes = [
           {
             path: "refund-goods",
             component: () => import("../views/shop-manage/refund-goods/index.vue")
+          },
+          {
+            path: "order-detail",
+            component: () => import("../views/shop-manage/order-detail/index.vue")
+          },
+          {
+            path: "refund-single",
+            component: () => import("../views/shop-manage/refund-single/index.vue")
           }
         ]
       }

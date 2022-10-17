@@ -47,7 +47,7 @@ const handleCellClick = (row, column) => {
   }
 
   if (column.label === "操作") {
-    router.push("/dashboard/shop/order-detail");
+    router.push("/main/shop/order-detail");
   }
 };
 
