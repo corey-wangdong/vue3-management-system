@@ -3,7 +3,7 @@
     <h1>后台管理系统</h1>
 
     <div class="tabs">
-      <el-tabs v-model="activeName" stretch="true">
+      <el-tabs v-model="activeName" :stretch="stretch">
         <el-tab-pane label="帐户密码登录" name="account">
           <div class="pane-account">
             <el-form :model="account" :rules="accountRules" size="large" status-icon ref="formRef">
@@ -41,6 +41,7 @@ let account = reactive<IAccount>({
   password: ""
 });
 
+const stretch = ref(true);
 // 2.定义校验规则
 const accountRules: FormRules = {
   name: [

@@ -77,10 +77,7 @@ export function mapPathToMenu(menus: any[], path: string) {
 
   for (const menu of menus) {
     console.log("menu---", menu);
-    const currentMenu = menu?.children?.find(submenu => path === submenu.url);
+    const currentMenu = menu?.children?.find((submenu: any) => path === submenu.url);
     if (currentMenu) return currentMenu;
-    // for (const submenu of menu.children) {
-    //   if (path === submenu.url) return submenu;
-    // }
   }
 }

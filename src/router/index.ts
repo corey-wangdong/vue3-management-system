@@ -1,5 +1,6 @@
 import { localCache } from "@/utils/cache";
 import { LOGIN_TOKEN } from "@/utils/constans";
+import { firstRoute } from "@/utils/map-menu";
 import { createRouter, createWebHistory, type RouteLocationNormalized } from "vue-router";
 
 const routes = [
@@ -32,10 +33,6 @@ const routes = [
             component: () => import("../views/shop-manage/refund-goods/index.vue")
           },
           {
-            path: "order-detail",
-            component: () => import("../views/shop-manage/order-detail/index.vue")
-          },
-          {
             path: "refund-single",
             component: () => import("../views/shop-manage/refund-single/index.vue")
           }
@@ -64,6 +61,12 @@ router.beforeEach((to: RouteLocationNormalized) => {
 
   if (to.path === "/login" && token) {
     return "/main";
+  }
+  console.log("firstRoute=====", firstRoute);
+  if (to.path === "/main" && firstRoute) {
+    console.log("firstRoute=====", firstRoute);
+
+    return firstRoute.path;
   }
 });
 
