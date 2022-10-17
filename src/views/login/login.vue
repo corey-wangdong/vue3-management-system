@@ -5,18 +5,18 @@
 </template>
 
 <script setup lang="ts">
-import LoginPanel from './components//login-panel.vue'
+import LoginPanel from "./components/login-panel.vue";
 </script>
 
 <style lang="scss">
-  .login {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    background: url("../../assets/img/login-bg.svg");
-  }
+  background: url("../../assets/img/login-bg.svg");
+}
 </style>
