@@ -10,6 +10,7 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "prettier-format": "prettier --config .prettierrc \"src/**/*.js\"   \"src/**/*.ts\"  \"src/**/*.tsx\"  --write",
     "prepare": "husky install"
   },
   "dependencies": {

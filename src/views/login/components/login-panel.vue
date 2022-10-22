@@ -74,7 +74,7 @@ function handleLoginBtnClick() {
         const password = account.password;
 
         // 2.向服务器发送网络请求(携带账号和密码)
-        // const result = await loginStore.loginAccountAction({ name, password });
+        const result = await loginStore.loginAccountAction({ name, password });
         if (result) {
           router.push("/main");
         }
