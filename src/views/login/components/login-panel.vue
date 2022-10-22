@@ -45,7 +45,7 @@ const stretch = ref(true);
 // 2.定义校验规则
 const accountRules: FormRules = {
   name: [
-    { required: true, message: "必须输入帐号信息~", trigger: "blur" },
+    { required: true, message: "必须输入帐号信息~", trigger: "blur" }
     // {
     //   pattern: /^[a-z0-9]{6,20}$/,
     //   message: "必须是6~20数字或字母组成~",
@@ -53,7 +53,7 @@ const accountRules: FormRules = {
     // }
   ],
   password: [
-    { required: true, message: "必须输入密码信息~", trigger: "blur" },
+    { required: true, message: "必须输入密码信息~", trigger: "blur" }
     // {
     //   pattern: /^[a-z0-9]{3,}$/,
     //   message: "必须是3位以上数字或字母组成",
@@ -63,7 +63,7 @@ const accountRules: FormRules = {
 };
 
 // 3.执行帐号的登录逻辑
-const loginStore = useLoginStore();
+// const loginStore = useLoginStore();
 function handleLoginBtnClick() {
   if (activeName.value === "account") {
     formRef.value?.validate(async (valid: boolean) => {
@@ -74,7 +74,7 @@ function handleLoginBtnClick() {
         const password = account.password;
 
         // 2.向服务器发送网络请求(携带账号和密码)
-        const result = await loginStore.loginAccountAction({ name, password });
+        // const result = await loginStore.loginAccountAction({ name, password });
         if (result) {
           router.push("/main");
         }
