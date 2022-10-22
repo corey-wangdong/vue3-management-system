@@ -46,19 +46,19 @@ const stretch = ref(true);
 const accountRules: FormRules = {
   name: [
     { required: true, message: "必须输入帐号信息~", trigger: "blur" },
-    {
-      pattern: /^[a-z0-9]{6,20}$/,
-      message: "必须是6~20数字或字母组成~",
-      trigger: "blur"
-    }
+    // {
+    //   pattern: /^[a-z0-9]{6,20}$/,
+    //   message: "必须是6~20数字或字母组成~",
+    //   trigger: "blur"
+    // }
   ],
   password: [
     { required: true, message: "必须输入密码信息~", trigger: "blur" },
-    {
-      pattern: /^[a-z0-9]{3,}$/,
-      message: "必须是3位以上数字或字母组成",
-      trigger: "blur"
-    }
+    // {
+    //   pattern: /^[a-z0-9]{3,}$/,
+    //   message: "必须是3位以上数字或字母组成",
+    //   trigger: "blur"
+    // }
   ]
 };
 

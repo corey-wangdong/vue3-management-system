@@ -6,6 +6,7 @@
 
 <script setup lang="ts">
 import LoginPanel from "./components/login-panel.vue";
+console.log('import.meta.env',import.meta.env)
 </script>
 
 <style lang="scss">

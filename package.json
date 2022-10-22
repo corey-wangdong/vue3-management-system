@@ -3,11 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
+    "dev:rc": "vite --mode rc",
+    "dev:prod": "vite --mode production",
     "build": "run-p type-check build-only",
     "preview": "vite preview --port 4173",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
@@ -28,6 +31,8 @@
     "eslint": "^8.22.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.3.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.7.1",
     "sass": "^1.55.0",
@@ -36,5 +41,11 @@
     "unplugin-vue-components": "^0.22.8",
     "vite": "^3.0.9",
     "vue-tsc": "^0.40.7"
+  },
+  "lint-staged": {
+    "*.{js, jsx, vue, ts, tsx}": [
+      "npm run lint",
+      "npm run prettier-format"
+    ]
   }
 }
