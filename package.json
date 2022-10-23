@@ -1,24 +1,30 @@
 {
-  "name": "vue3-cms",
+  "name": "cms",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "dev:rc": "vite --mode rc",
-    "dev:prod": "vite --mode production",
     "build": "run-p type-check build-only",
+    "build:rc": "run-p type-check && vite build --mode rc",
+    "build:qa": "run-p type-check && vite build --mode qa",
+    "build:prod": "run-p type-check && vite build --mode production",
     "preview": "vite preview --port 4173",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit",
+    "lint-staged": "lint-staged",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "prettier-format": "prettier --config .prettierrc \"src/**/*.js\"   \"src/**/*.ts\"  \"src/**/*.tsx\"  --write",
     "prepare": "husky install"
   },
   "dependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
     "@element-plus/icons-vue": "^2.0.10",
-    "axios": "^1.1.2",
+    "axios": "^1.1.3",
     "element-plus": "^2.2.18",
     "normalize.css": "^8.0.1",
     "pinia": "^2.0.21",
+    "pinia-plugin-persist": "^1.0.0",
+    "sass": "^1.55.0",
+    "terser": "^5.15.1",
     "vue": "^3.2.38",
     "vue-router": "^4.1.5"
   },
@@ -29,24 +35,31 @@
     "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/eslint-config-typescript": "^11.0.0",
     "@vue/tsconfig": "^0.1.3",
+    "consola": "^2.15.3",
     "eslint": "^8.22.0",
-    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.3.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.7.1",
-    "sass": "^1.55.0",
     "typescript": "~4.7.4",
     "unplugin-auto-import": "^0.11.2",
     "unplugin-vue-components": "^0.22.8",
     "vite": "^3.0.9",
+    "vite-plugin-style-import": "^2.0.0",
     "vue-tsc": "^0.40.7"
   },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
-    "*.{js, jsx, vue, ts, tsx}": [
-      "npm run lint",
-      "npm run prettier-format"
+    "*.{js,ts,vue}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
     ]
   }
 }
