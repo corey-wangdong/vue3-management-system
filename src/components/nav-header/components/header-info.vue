@@ -3,7 +3,8 @@
     <div class="info">
       <el-dropdown>
         <span class="user-info">
-          <el-avatar :size="25" class="avatar" src="https://joeschmoe.io/api/v1/random" />
+          <!-- <el-avatar :size="25" class="avatar" src="https://joeschmoe.io/api/v1/random" /> -->
+          <el-avatar :size="25" class="avatar" :src="LOGO" />
           <span class="name">{{ userInfo?.user_name || "" }}</span>
         </span>
         <template #dropdown>
@@ -22,6 +23,7 @@
 <script setup lang="ts" name="header-info">
 import { useRouter } from "vue-router";
 import useLoginStore from "@/stores/login/login";
+import { LOGO } from "@/utils/constant";
 
 defineProps({
   userInfo: {

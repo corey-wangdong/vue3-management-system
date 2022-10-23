@@ -1,3 +1,3 @@
 export const LOGIN_TOKEN = "login/token";
 
-export const BOOHEE_LOGO = 'https://up.boohee.cn/house/u/user-story/v2.0/boohee_logo.png'
+export const LOGO = "https://p3-passport.byteimg.com/img/user-avatar/9e728415ccc46ecd88164afe2d9dbd15~180x180.awebp";

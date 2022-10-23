@@ -1,7 +1,7 @@
 <template>
   <div class="nav-menu">
     <div class="logo">
-      <img class="img" :src="BOOHEE_LOGO" alt="logo" />
+      <img class="img" :src="LOGO" alt="logo" />
       <span v-show="!isFold" class="title">后台管理系统</span>
     </div>
     <el-menu
@@ -33,7 +33,7 @@ import { ref } from "vue";
 import useLoginStore from "@/stores/login/login";
 import { useRoute, useRouter } from "vue-router";
 import { mapPathToMenu } from "@/utils/map-menu";
-import { BOOHEE_LOGO } from "@/utils/constant";
+import { LOGO } from "@/utils/constant";
 const router = useRouter();
 
 defineProps({

@@ -1,6 +1,6 @@
 <template>
   <div class="login-panel">
-    <img class="login-logo" src="http://up.boohee.cn/house/u/site/pc/logo_bar@2x.png" alt="" />
+    <img class="login-logo" :src="LOGO" alt="" />
     <div class="login-title">后台管理系统</div>
 
     <div class="tabs">
@@ -25,6 +25,7 @@ import useLoginStore from "@/stores/login/login";
 import type { FormRules, ElForm } from "element-plus";
 import { ElMessage } from "element-plus";
 import type { IAccount } from "@/types";
+import { LOGO } from "@/utils/constant";
 const formRef = ref<InstanceType<typeof ElForm>>();
 // 1.定义account数据
 let loginInfo = reactive<IAccount>({
